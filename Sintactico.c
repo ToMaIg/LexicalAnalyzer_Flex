@@ -14,7 +14,6 @@ void print_comp_lex(){
     int cond=0;
     //reservo memoria para tipoelem
     tipoelem *t=(tipoelem*)malloc(sizeof(tipoelem));
-    t->lexema=(char*)malloc(sizeof(char)*64);
     //leo el archivo
     yyin = fopen("wilcoxon.py", "r" );
     printf("|TOKENS ECONTRADOS|\n");
@@ -32,6 +31,5 @@ void print_comp_lex(){
     }
     printf("-----------------------------------\n");
     //libero memoria para tipoelem
-    free(t->lexema);
     free(t);
 }

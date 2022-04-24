@@ -45,7 +45,10 @@ EXPONENTFLOAT ({DIGITPART}|{POINTFLOAT}){EXPONENT}
 					else{
 						tipoelem aux;
 						tipo->compLex=ID;
-						aux.lexema=strdup(yytext);
+						int i;
+						for(i=0;i<SIZE;i++){
+							aux.lexema[i]=yytext[i];
+						}
 						aux.compLex=ID;
 						aux.linea=yylineno;
 						if(!MiembroHashTablaSimbolos(aux)){

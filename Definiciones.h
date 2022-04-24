@@ -1,9 +1,10 @@
 #pragma once
+#define SIZE 64
 //-------------------------------------------------------
 //-------------------------------------------------------
 //ESTRUCTURA
 struct tipo{ // Estructura de los elementos de la lista
-    char * lexema;
+    char lexema[SIZE];
     int compLex;
     int linea;
 };

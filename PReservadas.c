@@ -7,17 +7,14 @@ char keywords[KEYTAM][10]={"False","await","else","import","pass","None","break"
 */
 void fill_keywords(){
     int i=0;
-    tipoelem *elemento;
-    elemento=(struct tipo*) malloc(sizeof(struct tipo));
+    tipoelem elemento;
     //recorro la variable global
     for(i=0;i<KEYTAM;i++){
-    	elemento->lexema = calloc(strlen(keywords[i]),sizeof(char)); // Reservamos memoria y la ponemos a cero
-    	strcpy(elemento->lexema,keywords[i]);
-    	elemento->compLex=300+i;
-    	InsertarHashTablaSimbolos(*elemento);
+    	memset(elemento.lexema,0,SIZE);
+	strcat(elemento.lexema,keywords[i]);
+    	elemento.compLex=300+i;
+    	InsertarHashTablaSimbolos(elemento);
     }
-    free(elemento);
-    elemento=NULL;
 }
 /*
 	 Funci�n: compara una cadena dada con las palabras reservadas para saber si lo es o no

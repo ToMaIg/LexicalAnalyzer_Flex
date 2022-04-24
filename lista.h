@@ -3,6 +3,7 @@
 #include "Definiciones.h"
 #pragma once
 
+
 struct celda{ // Estructura de una celda de la lista
     tipoelem elemento;
     struct celda *sig;
